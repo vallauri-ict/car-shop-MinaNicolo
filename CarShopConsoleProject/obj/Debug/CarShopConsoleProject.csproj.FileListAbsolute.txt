@@ -1,8 +1,0 @@
-C:\Users\develop\Desktop\CarShopSolution\CarShopConsoleProject\bin\Debug\CarShopConsoleProject.exe.config
-C:\Users\develop\Desktop\CarShopSolution\CarShopConsoleProject\bin\Debug\CarShopConsoleProject.exe
-C:\Users\develop\Desktop\CarShopSolution\CarShopConsoleProject\bin\Debug\CarShopConsoleProject.pdb
-C:\Users\develop\Desktop\CarShopSolution\CarShopConsoleProject\obj\Debug\CarShopConsoleProject.csprojAssemblyReference.cache
-C:\Users\develop\Desktop\CarShopSolution\CarShopConsoleProject\obj\Debug\CarShopConsoleProject.csproj.CoreCompileInputs.cache
-C:\Users\develop\Desktop\CarShopSolution\CarShopConsoleProject\obj\Debug\CarShopConsoleProject.exe
-C:\Users\develop\Desktop\CarShopSolution\CarShopConsoleProject\obj\Debug\CarShopConsoleProject.pdb
-C:\Users\develop\Desktop\CarShopSolution\CarShopConsoleProject\bin\Debug\CarShop.accdb
