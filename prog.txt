@@ -1,0 +1,12 @@
+salone vendita auto-moto-camion
+veicoli nuovi e usati
+
+
+
+			     |  DLL 	  --> dinamyc linked library
+soluzione multiprogetto      |  console   --> attività batch
+			     |	wind form --> gestionale e office automation
+			     |  ? web 	  --> presentation
+
+
+				
