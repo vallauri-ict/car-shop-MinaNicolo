@@ -1,0 +1,16 @@
+﻿#wrapper{
+    margin: 0 auto;
+}
+
+#wrapper div {
+    margin-bottom: 3px;
+    border: 1px solid black;
+    width: 350px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+#wrapper div span {
+    margin: 0 auto;
+    margin-left:130px;
+}

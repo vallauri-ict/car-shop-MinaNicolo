@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfVeicolo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <veicolo xsi:type="moto">
+    <Marca>Ducati</Marca>
+    <Modello>Panigale V4R</Modello>
+    <Cilindrata>1000</Cilindrata>
+    <PotenzaKw>75</PotenzaKw>
+    <Immatricolazione>2020-01-10T09:01:02.33977+01:00</Immatricolazione>
+    <KmPercorsi>0</KmPercorsi>
+    <Colore>blu</Colore>
+    <IsUsato>false</IsUsato>
+    <IsKmZero>false</IsKmZero>
+    <MarcaSella>StandarCO</MarcaSella>
+  </veicolo>
+  <veicolo xsi:type="auto">
+    <Marca>Alfa Romeo</Marca>
+    <Modello>Stelvio</Modello>
+    <Cilindrata>2000</Cilindrata>
+    <PotenzaKw>150</PotenzaKw>
+    <Immatricolazione>2020-01-10T09:01:02.3553991+01:00</Immatricolazione>
+    <KmPercorsi>0</KmPercorsi>
+    <Colore>rosso</Colore>
+    <IsUsato>false</IsUsato>
+    <IsKmZero>false</IsKmZero>
+    <NumairBag>8</NumairBag>
+  </veicolo>
+</ArrayOfVeicolo>
