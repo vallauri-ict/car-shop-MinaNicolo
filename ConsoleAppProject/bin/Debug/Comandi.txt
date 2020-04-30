@@ -1,0 +1,4 @@
+H : mostra comandi
+C : crea tabella veicoli
+A : aggiunge un veicolo (auto o moto)
+LS : mostra lista veicoli
