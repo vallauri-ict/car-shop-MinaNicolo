@@ -8,10 +8,10 @@ namespace venditaVeicoliDLLProject
     public class auto:veicolo
     {
         private int numairBag;
-        public auto() : base("BMW", "Z4", 2000, 200, new DateTime(), 0, "nero", false, false) { NumairBag = 6; }
+        public auto() : base("BMW", "Z4", 2000, 200, new DateTime(), 0, "nero", false, false,12360) { NumairBag = 6; }
         public auto(string marca, string modello, int cilindrata, int potenza, DateTime dataImm,
-            int chilometriPercorsi, string colore, bool usato, bool kmZero,int numairBag) : base(marca, modello, cilindrata,
-                potenza, dataImm, chilometriPercorsi, colore, usato, kmZero)
+            int chilometriPercorsi, string colore, bool usato, bool kmZero, int prezzo, int numairBag) : base(marca, modello, cilindrata,
+                potenza, dataImm, chilometriPercorsi, colore, usato, kmZero, prezzo)
         {
             this.numairBag=numairBag;
         }
