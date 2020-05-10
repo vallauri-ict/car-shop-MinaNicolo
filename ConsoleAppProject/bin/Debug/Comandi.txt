@@ -1,5 +1,6 @@
-H  : mostra comandi
-C  : crea tabella specificata
-A  : aggiunge un veicolo (auto o moto)
-LS : mostra lista veicoli
-D  : elimina tabella specificata
+H  [help] : mostra comandi
+CS [clear screen] : pulisce lo schermo
+C  [create] : crea tabella specificata
+A  [add] : aggiunge un veicolo (auto o moto)
+LS [list] : mostra lista veicoli
+D  [delete] : elimina tabella specificata
