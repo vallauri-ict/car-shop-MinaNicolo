@@ -17,14 +17,6 @@ namespace ConsoleAppProject
         {
             Console.WriteLine("\t\t\t----- SALONE VEICOLI USATI E NUOVI -----\n");
 
-            /*moto m = new moto();
-            m = new moto("Ducati", "Panigale V4R", 1000, 75, DateTime.Now, 0, "blu", false, false, "StandarCO");
-            auto a = new auto("Alfa Romeo", "Stelvio", 2000, 150, DateTime.Now, 0, "rosso", false, false, 8);
-            Console.WriteLine(m);
-            Console.WriteLine(a);*/
-
-            SerializableBindingList<veicolo> listaVeicoli = new SerializableBindingList<veicolo>();
-
             string scelta;
             string tabella;
 
@@ -52,15 +44,19 @@ namespace ConsoleAppProject
                             else v = new moto();
                         }
                         else break;
-                        AddNewVehicle(v, listaVeicoli);
+                        AddNewVehicle(v);
                        
                         break;
                     case "LS": Console.Write("\nInserisci il nome della tabella da visualizzare [auto/moto]: ");
                             tabella = Console.ReadLine().Trim().ToLower(); CarList(tabella);break;
                     case "D":
                         Console.Write("\nInserisci il nome della tabella da eliminare [auto/moto]: ");
-                        tabella = Console.ReadLine().Trim().ToLower(); DropTable(tabella); break;
-                    default:
+                        tabella = Console.ReadLine().Trim().ToLower(); DropTable(tabella);break;
+                    case "CS": Console.Clear();
+                        Console.WriteLine("\t\t\t----- SALONE VEICOLI USATI E NUOVI -----\n");break;
+                    case "X": break;
+
+                    default :
                         Console.WriteLine("Comando non disponibile!");
                         Console.ReadKey();
                         Console.Clear();
@@ -91,7 +87,7 @@ namespace ConsoleAppProject
             }
         }
 
-        private static void AddNewVehicle(veicolo v, SerializableBindingList<veicolo> lista)
+        private static void AddNewVehicle(veicolo v)
         {
             if (connStr != null)
             {
@@ -113,22 +109,23 @@ namespace ConsoleAppProject
                         v.IsUsato = Convert.ToBoolean(SetFields("Il veicolo è usato? [Si/No] "));
                         v.IsKmZero = Convert.ToBoolean(SetFields("Il veicolo è Km zero? [Si/No] "));
                         v.KmPercorsi = v.IsUsato ? Convert.ToInt32(SetFields("Inserisci km percorsi: ")) : 0;
-                        v.Colore = SetFields("Inserisci colore: ");                       
+                        v.Colore = SetFields("Inserisci colore: ");
+                        v.Prezzo = Convert.ToInt32(SetFields("Inserisci prezzo: "));
 
                         string query;
                         if (v is auto)
                         {
                             (v as auto).NumairBag = Convert.ToInt32(SetFields("Inserisci numero di airbag: "));
                             query = "INSERT INTO auto(marca, modello, cilindrata, potenzaKw," +
-                                "immatr, kmPercorsi, colore, isUsato, isKmZero, nAirBag) VALUES(@marca, @modello," +
-                                "@cilindrata, @potenzaKw, @immatr, @kmPercorsi, @colore, @isUsato, @isKmZero, @nAirBag)";
+                                "immatr, kmPercorsi, colore, isUsato, isKmZero, prezzo, nAirBag) VALUES(@marca, @modello," +
+                                "@cilindrata, @potenzaKw, @immatr, @kmPercorsi, @colore, @isUsato, @isKmZero, @prezzo, @nAirBag)";
                         }
                         else
                         {
                             (v as moto).MarcaSella = SetFields("Inserisci la marca della sella: ");
                             query = "INSERT INTO moto(marca, modello, cilindrata, potenzaKw," +
-                                "immatr, kmPercorsi, colore, isUsato, isKmZero, mSella) VALUES(@marca, @modello," +
-                                "@cilindrata, @potenzaKw, @immatr, @kmPercorsi, @colore, @isUsato, @isKmZero, @mSella)";
+                                "immatr, kmPercorsi, colore, isUsato, isKmZero, prezzo, mSella) VALUES(@marca, @modello," +
+                                "@cilindrata, @potenzaKw, @immatr, @kmPercorsi, @colore, @isUsato, @isKmZero, @prezzo, @mSella)";
                         }
 
                         cmd.CommandText = query;
@@ -138,8 +135,8 @@ namespace ConsoleAppProject
                         cmd.ExecuteNonQuery();
                         System.Threading.Thread.Sleep(3000);
 
-                        Console.WriteLine("Veicolo aggiunto correttamente!");
-                        lista.Add(v);
+                        Console.WriteLine("\nVeicolo aggiunto correttamente!");
+
                         Console.ReadKey();
                     }
                     catch (Exception ex)
@@ -161,6 +158,7 @@ namespace ConsoleAppProject
             cmd.Parameters.Add("@colore", OleDbType.VarChar, 255).Value = v.Colore;
             cmd.Parameters.Add("@isUsato", OleDbType.Boolean).Value = v.IsUsato;
             cmd.Parameters.Add("@isKmZero", OleDbType.Boolean).Value = v.IsKmZero;
+            cmd.Parameters.Add("@prezzo", OleDbType.Integer).Value = v.Prezzo;
 
             if (v is auto)
                 cmd.Parameters.Add("@nAirBag", OleDbType.Integer).Value = (v as auto).NumairBag;
@@ -205,20 +203,20 @@ namespace ConsoleAppProject
                                 Console.WriteLine("ID: {0}| Marca: {1}| Modello: {2}|" +
                                     " Cilindrata: {3}| Potenza[Kw]: {4}| Immatricolazione: {5}|" +
                                     " Km percorsi: {6}| Colore: {7}| Usato: {8}| Km zero: {9}|" +
-                                    " Numero airbag: {10}",
+                                    " prezzo: {10}| Numero airbag: {11}",
                                     rdr.GetInt32(0), rdr.GetString(1),rdr.GetString(2),
                                     rdr.GetInt32(3), rdr.GetInt32(4), rdr.GetDateTime(5).ToShortDateString(),
                                     rdr.GetInt32(6), rdr.GetString(7), rdr.GetBoolean(8),
-                                    rdr.GetBoolean(9), rdr.GetInt32(10));
+                                    rdr.GetBoolean(9), rdr.GetInt32(10), rdr.GetInt32(11));
                             else
                                 Console.WriteLine("ID: {0}| Marca: {1}| Modello: {2}|" +
                                     " Cilindrata: {3}| Potenza[Kw]: {4}| Immatricolazione: {5}|" +
                                     " Km percorsi: {6}| Colore: {7}| Usato: {8}| Km zero: {9}|" +
-                                    " Marca sella: {10}",
-                                   rdr.GetInt32(0), rdr.GetString(1), rdr.GetString(2),
-                                   rdr.GetInt32(3), rdr.GetInt32(4), rdr.GetDateTime(5).ToShortDateString(),
-                                   rdr.GetInt32(6), rdr.GetString(7), rdr.GetBoolean(8),
-                                   rdr.GetBoolean(9), rdr.GetString(10));
+                                    " prezzo: {10}| Numero airbag: {11}",
+                                    rdr.GetInt32(0), rdr.GetString(1), rdr.GetString(2),
+                                    rdr.GetInt32(3), rdr.GetInt32(4), rdr.GetDateTime(5).ToShortDateString(),
+                                    rdr.GetInt32(6), rdr.GetString(7), rdr.GetBoolean(8),
+                                    rdr.GetBoolean(9), rdr.GetInt32(10), rdr.GetString(11));
                         }
                     }
                     else
@@ -227,8 +225,8 @@ namespace ConsoleAppProject
                     }
                     rdr.Close();
                 }
-                Console.WriteLine("\nCars listed!");
-                System.Threading.Thread.Sleep(5000);
+                Console.WriteLine($"\n{tabella} listed!");
+                System.Threading.Thread.Sleep(2000);
             }
         }
 
@@ -243,11 +241,6 @@ namespace ConsoleAppProject
 
                     OleDbCommand cmd = new OleDbCommand();
                     cmd.Connection = connection;
-
-                    // cmd.CommandText = "DROP TABLE IF EXISTS cars";
-                    // cmd.ExecuteNonQuery();
-
-                    //type BIT in the table = boolean
                     try
                     {
                         if (tabella == "auto")
@@ -261,8 +254,9 @@ namespace ConsoleAppProject
                                             immatr DATE NOT NULL,
                                             kmPercorsi INT NOT NULL,
                                             colore VARCHAR(255) NOT NULL,
-                                            isUsato BIT NOT NULL CHEK,
-                                            isKmZero BIT NOT NULL CHEK,
+                                            isUsato BIT NOT NULL,
+                                            isKmZero BIT NOT NULL,
+                                            prezzo INT NOT NULL,
                                             nAirBag INT NOT NULL)";
                         }
                         else
@@ -276,8 +270,9 @@ namespace ConsoleAppProject
                                                 immatr DATE NOT NULL,
                                                 kmPercorsi INT NOT NULL,
                                                 colore VARCHAR(255) NOT NULL,
-                                                isUsato BIT NOT NULL CHECK,
-                                                isKmZero BIT NOT NULL CHEK,
+                                                isUsato BIT NOT NULL,
+                                                isKmZero BIT NOT NULL,
+                                                prezzo INT NOT NULL,
                                                 mSella VARCHAR(255) NOT NULL)";
                         }
                         cmd.ExecuteNonQuery();
@@ -288,8 +283,8 @@ namespace ConsoleAppProject
                         System.Threading.Thread.Sleep(2000);
                         return;
                     }
-                    Console.WriteLine("\n\nCars created!");
-                    System.Threading.Thread.Sleep(3000);
+                    Console.WriteLine($"\n\n{tabella} created!");
+                    System.Threading.Thread.Sleep(1500);
                 }
             }
         }
