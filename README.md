@@ -10,7 +10,7 @@ A  [add] : aggiunge un veicolo (auto o moto)
 LS [list] : mostra lista veicoli
 D  [delete] : elimina tabella specificata
 ```
-* Un progetto Windows Form nel quale è possibile gestire il salone veicoli tramite un'intefaccia grafica.
+* Un progetto Windows Form nel quale è possibile gestire il salone veicoli tramite un'interfaccia grafica.
 
 * Una DLL nella quale sono presenti le principali classi per la gestione dell'intero progetto.
 ## Classi presenti all'interno della DLL ##
