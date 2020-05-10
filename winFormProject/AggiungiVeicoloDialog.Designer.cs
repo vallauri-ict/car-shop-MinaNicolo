@@ -51,6 +51,8 @@
             this.tbMarcaSella = new System.Windows.Forms.TextBox();
             this.nudNumeroAirBag = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
+            this.lblPrezzo = new System.Windows.Forms.Label();
+            this.txtPrezzo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumeroAirBag)).BeginInit();
             this.SuspendLayout();
@@ -290,12 +292,32 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "Tipo veicolo ";
             // 
+            // lblPrezzo
+            // 
+            this.lblPrezzo.AutoSize = true;
+            this.lblPrezzo.Location = new System.Drawing.Point(277, 167);
+            this.lblPrezzo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrezzo.Name = "lblPrezzo";
+            this.lblPrezzo.Size = new System.Drawing.Size(39, 13);
+            this.lblPrezzo.TabIndex = 24;
+            this.lblPrezzo.Text = "Prezzo";
+            // 
+            // txtPrezzo
+            // 
+            this.txtPrezzo.Location = new System.Drawing.Point(348, 164);
+            this.txtPrezzo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrezzo.Name = "txtPrezzo";
+            this.txtPrezzo.Size = new System.Drawing.Size(114, 20);
+            this.txtPrezzo.TabIndex = 25;
+            // 
             // AggiungiVeicoloDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnulla;
             this.ClientSize = new System.Drawing.Size(483, 235);
+            this.Controls.Add(this.txtPrezzo);
+            this.Controls.Add(this.lblPrezzo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.nudNumeroAirBag);
             this.Controls.Add(this.tbMarcaSella);
@@ -356,5 +378,7 @@
         private System.Windows.Forms.TextBox tbMarcaSella;
         private System.Windows.Forms.NumericUpDown nudNumeroAirBag;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblPrezzo;
+        private System.Windows.Forms.TextBox txtPrezzo;
     }
 }

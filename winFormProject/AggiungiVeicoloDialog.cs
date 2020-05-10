@@ -46,9 +46,9 @@ namespace winFormProject
         private void btnAggiungi_Click(object sender, EventArgs e)
         {
             if (cmbTipoVeicolo.SelectedIndex == 0)
-                listVeicolo.Add(new auto(cmbMarca.SelectedItem.ToString(),txtModello.Text,int.Parse(txtCilindrata.Text) ,int.Parse(txtPotenza.Text),dtpImm.Value,Convert.ToInt32(nudMP.Value), cmbColor.SelectedItem.ToString(), cbUsato.Checked,cbKmZero.Checked, Convert.ToInt32(nudNumeroAirBag.Value)));
+                listVeicolo.Add(new auto(cmbMarca.SelectedItem.ToString(),txtModello.Text,int.Parse(txtCilindrata.Text) ,int.Parse(txtPotenza.Text),dtpImm.Value,Convert.ToInt32(nudMP.Value), cmbColor.SelectedItem.ToString(), cbUsato.Checked,cbKmZero.Checked,Convert.ToInt32(txtPrezzo.Text), Convert.ToInt32(nudNumeroAirBag.Value)));
             else
-                listVeicolo.Add(new moto(cmbMarca.SelectedItem.ToString(), txtModello.Text, int.Parse(txtCilindrata.Text), int.Parse(txtPotenza.Text), dtpImm.Value, Convert.ToInt32(nudMP.Value), cmbColor.SelectedItem.ToString(), cbUsato.Checked, cbKmZero.Checked, tbMarcaSella.Text));
+                listVeicolo.Add(new moto(cmbMarca.SelectedItem.ToString(), txtModello.Text, int.Parse(txtCilindrata.Text), int.Parse(txtPotenza.Text), dtpImm.Value, Convert.ToInt32(nudMP.Value), cmbColor.SelectedItem.ToString(), cbUsato.Checked, cbKmZero.Checked, Convert.ToInt32(txtPrezzo.Text), tbMarcaSella.Text));
 
             MessageBox.Show($"Aggiungi\n {listVeicolo.Last()}");
             this.Close();

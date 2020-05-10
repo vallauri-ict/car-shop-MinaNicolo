@@ -30,9 +30,9 @@ namespace winFormProject
         private void CaricaDatiDiTesto()
         {
             moto m = new moto();
-            m = new moto("Ducati", "Panigale V4R", 1000, 75, DateTime.Now, 0, "blu", false, false, "StandarCO");
+            m = new moto("Ducati", "Panigale V4R", 1000, 75, DateTime.Now, 0, "blu", false, false, 11300, "StandarCO");
             listVeicolo.Add(m);
-            auto a = new auto("Alfa Romeo", "Stelvio", 2000, 150, DateTime.Now, 0, "rosso", false, false, 8);
+            auto a = new auto("Alfa Romeo", "Stelvio", 2000, 150, DateTime.Now, 0, "rosso", false, false, 10000, 8);
             listVeicolo.Add(a);
             lbVeicoli.DataSource = listVeicolo;
         } 
@@ -66,26 +66,19 @@ namespace winFormProject
 
         private void salvaToolStripButton_Click(object sender, EventArgs e)
         {
-            Utils.SerializeToCsv(listVeicolo, "./veicolo.csv");
-            Utils.SerializeToXml(listVeicolo,"./veicolo.xml");
-            Utils.SerializeToJson(listVeicolo,"./veicolo.json");
-            //string toWrite = null;
-            //StreamWriter sw = new StreamWriter("veicoli.dat");
+            try
+            {
+                Utils.SerializeToCsv(listVeicolo, "./veicolo.csv");
+                Utils.SerializeToXml(listVeicolo, "./veicolo.xml");
+                Utils.SerializeToJson(listVeicolo, "./veicolo.json");
+                MessageBox.Show("Salvato correttamente");
+            }
+            catch (Exception ex)
+            {
 
-            //foreach (var item in listVeicolo)
-            //{
-            //    toWrite = null;
-            //    if (item is auto)
-            //    {   
-            //        toWrite = $"AUTO|{item.Marca}|{item.Modello}|{item.Cilindrata}|{item.PotenzaKw}|{item.Immatricolazione.ToShortDateString()}|{item.KmPercorsi}|{item.Colore}|{item.IsUsato}|{item.IsKmZero}|{(item as auto).NumairBag}";
-            //    }
-            //    else
-            //    {
-            //        toWrite = $"MOTO|{item.Marca}|{item.Modello}|{item.Cilindrata}|{item.PotenzaKw}|{item.Immatricolazione.ToShortDateString()}|{item.KmPercorsi}|{item.Colore}|{item.IsUsato}|{item.IsKmZero}|{(item as moto).MarcaSella}";
-            //    }
-            //    sw.WriteLine(toWrite);
-            //}
-            //sw.Close();
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         private void tlsBtnCaricaOnline_Click(object sender, EventArgs e)
