@@ -1,7 +1,7 @@
 # car-shop-MinaNicolo -- Vendita veicoli #
 ## Functions in Program.cs ##
 This function adds parametes to OleDbCommand
-``` 
+```javascript
 private static void addParameters(OleDbCommand cmd, veicolo v)
         {
             cmd.Parameters.Add(new OleDbParameter("@marca", OleDbType.VarChar, 255)).Value = v.Marca;
