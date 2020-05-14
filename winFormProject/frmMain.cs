@@ -1,20 +1,13 @@
 ﻿using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
+using OpenXmlUtilities;
 using ReflectionCssPocProject;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using venditaVeicoliDLLProject;
 using static ReflectionCssPocProject.Utils;
-using OpenXmlUtilities;
-using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace winFormProject
 {
@@ -23,6 +16,8 @@ namespace winFormProject
         SerializableBindingList<veicolo> listVeicolo;
         clsOpenXmlWordUtilities word = new clsOpenXmlWordUtilities();
         clsOpenXmlExcelUtilities excel = new clsOpenXmlExcelUtilities();
+        Utils u = new Utils();
+
         public frmMain()
         {
             listVeicolo = new SerializableBindingList<veicolo>();
@@ -41,7 +36,7 @@ namespace winFormProject
             auto a = new auto("Alfa Romeo", "Stelvio", 2000, 150, DateTime.Now, 0, "rosso", false, false, 10000, 8);
             listVeicolo.Add(a);
             lbVeicoli.DataSource = listVeicolo;
-        } 
+        }
 
         private void toolStripBtnAddVeicolo_Click_1(object sender, EventArgs e)
         {
@@ -64,7 +59,7 @@ namespace winFormProject
 
                 MessageBox.Show(ex.Message);
             }
-           
+
         }
 
         private void tlsBtnCaricaOnline_Click(object sender, EventArgs e)
@@ -79,8 +74,8 @@ namespace winFormProject
 
             try
             {
-                string filePath = excel.OutputFileName(excel.SelectPath(folderBrowserDialog), "xlsx");
-                List<Dictionary<string, string>> list = new List<Dictionary<string, string>>();
+                string filePath = u.OutputFileName(u.SelectPath(folderBrowserDialog), "xlsx");
+                List<Dictionary<string, string>> lista = new List<Dictionary<string, string>>();
                 for (int i = 0; i < listVeicolo.Count; i++)
                 {
                     string usato = listVeicolo[i].IsUsato ? "Si" : "No";
@@ -97,17 +92,17 @@ namespace winFormProject
                     excelContent.Add("Km Zero", kmZero);
                     excelContent.Add("Km Percorsi", listVeicolo[i].KmPercorsi.ToString());
                     excelContent.Add("Prezzo", listVeicolo[i].Prezzo.ToString() + " €");
-                    if ((listVeicolo[i] is auto)) 
+                    if ((listVeicolo[i] is auto))
                         excelContent.Add("Numero Airbag/Marca sella", (listVeicolo[i] as auto).NumairBag.ToString());
-                    else 
+                    else
                         excelContent.Add("Numero Airbag/Marca sella", (listVeicolo[i] as moto).MarcaSella);
-                    
-                    list.Add(excelContent);
+
+                    lista.Add(excelContent);
                 }
                 using (SpreadsheetDocument package = SpreadsheetDocument.Create(filePath, SpreadsheetDocumentType.Workbook))
                 {
 
-                    clsOpenXmlExcelUtilities.CreatePartsForExcel(package, list);
+                    clsOpenXmlExcelUtilities.CreatePartsForExcel(package, lista);
 
                     MessageBox.Show("Il documento excel è pronto!");
                 }
@@ -122,7 +117,7 @@ namespace winFormProject
         {
             try
             {
-                string filePath = word.OutputFileName(word.SelectPath(folderBrowserDialog), "docx");
+                string filePath = u.OutputFileName(u.SelectPath(folderBrowserDialog), "docx");
 
                 using (WordprocessingDocument doc = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document))
                 {
@@ -146,14 +141,14 @@ namespace winFormProject
                         string[] elements = {
                             $"Immatricolazione: {listVeicolo[i].Immatricolazione.ToShortDateString()}",
                             $"Colore: {listVeicolo[i].Colore}",
-                            $"Cilindrata: {listVeicolo[i].Cilindrata}", 
+                            $"Cilindrata: {listVeicolo[i].Cilindrata}",
                             $"Potenza: {listVeicolo[i].PotenzaKw} Kw",
-                            $"Usato: {usato}", $"Km zero: {kmZero}", 
+                            $"Usato: {usato}", $"Km zero: {kmZero}",
                             $"Km Percorsi: {listVeicolo[i].KmPercorsi}",
                             $"Prezzo: {listVeicolo[i].Prezzo} €"
                         };
+
                         List<Paragraph> bulletList = new List<Paragraph>();
-                        
                         word.CreateBulletOrNumberedList(100, 200, bulletList, elements);
                         foreach (Paragraph paragraph in bulletList)
                             body.Append(paragraph);
