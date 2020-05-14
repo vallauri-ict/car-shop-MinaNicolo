@@ -67,7 +67,10 @@ namespace ReflectionCssPocProject
 
             foreach (var item in lista)
             {
-                _div += $"<div><span>{(item as veicolo).Marca}</span> <br> <span>{(item as veicolo).Modello}</span></div>";
+                _div += "<div class = \"divVeicolo\">";
+                _div += $"<div class = \"titoloMarca\">{(item as veicolo).Marca} {(item as veicolo).Modello}";
+                _div += $"<div class = \"didascalia\"> Colore: {(item as veicolo).Colore}<br> Cilindrata: {(item as veicolo).Cilindrata}<br> Immatricolazione: {(item as veicolo).Immatricolazione.ToString("dd/MM/yyyy")}<br> Prezzo: {(item as veicolo).Prezzo} € </div>";
+                _div += "</div></div>";
             }
             html = html.Replace("{{body-subtitle}}", "Veicoli");
             html = html.Replace("{{main-content}}", _div);
