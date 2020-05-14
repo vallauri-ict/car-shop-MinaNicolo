@@ -15,11 +15,6 @@ namespace venditaVeicoliDLLProject
         {
             this.numairBag=numairBag;
         }
-
-        public auto(string[] data) : base(data)
-        {
-            numairBag = Convert.ToInt32(data[10]);
-        }
         public int NumairBag { get => numairBag; set => numairBag = value; }
 
         public override string ToString()

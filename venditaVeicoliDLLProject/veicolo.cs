@@ -22,7 +22,6 @@ namespace venditaVeicoliDLLProject
         #endregion
 
         public veicolo() { }
-        public string ImagePath { get; set; }
         public veicolo(string marca, string modello, int cilindrata, double potenzaKw, DateTime immatricolazione, int kmPercorsi, string colore, bool isUsato, bool isKmZero, int prezzo)
         {
             this.Marca = marca;
@@ -35,21 +34,6 @@ namespace venditaVeicoliDLLProject
             this.IsUsato = isUsato;
             this.IsKmZero = isKmZero;
             this.Prezzo = prezzo;
-        }
-
-        public veicolo(string[] data)
-        {
-
-            this.Marca = data[1];
-            this.Modello = data[2];
-            this.Cilindrata = int.Parse(data[3]);
-            this.PotenzaKw = int.Parse(data[4]);
-            this.Immatricolazione = Convert.ToDateTime(data[5]);
-            this.KmPercorsi = int.Parse(data[6]);
-            this.Colore = data[7];
-            this.IsUsato = Convert.ToBoolean(data[8]);
-            this.IsKmZero = Convert.ToBoolean(data[9]);
-            this.Prezzo = Convert.ToInt32(data[11]);
         }
 
         public string Marca { get => marca; set => marca = value; }

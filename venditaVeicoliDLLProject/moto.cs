@@ -8,14 +8,10 @@ namespace venditaVeicoliDLLProject
         private string marcaSella;
         public moto() : base("BMW","S1000RR",1000,0,new DateTime(),0,"blu",false,false,14000){ MarcaSella = "Quintino"; }
         public moto(string marca, string modello, int cilindrata, int potenza, DateTime dataImm,
-    int chilometriPercorsi, string colore, bool usato, bool kmZero, int prezzo, string MarcaSella) : base(marca, modello, cilindrata,
+        int chilometriPercorsi, string colore, bool usato, bool kmZero, int prezzo, string MarcaSella) : base(marca, modello, cilindrata,
         potenza, dataImm, chilometriPercorsi, colore, usato, kmZero, prezzo)
         {
             this.MarcaSella = MarcaSella;
-        }
-        public moto(string[] data) : base(data)
-        {
-            marcaSella = data[10];
         }
         public string MarcaSella { get => marcaSella; set => marcaSella = value; }
 

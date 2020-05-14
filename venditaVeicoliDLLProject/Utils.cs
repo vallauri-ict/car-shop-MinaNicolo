@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 using venditaVeicoliDLLProject;
 
@@ -77,6 +78,29 @@ namespace ReflectionCssPocProject
 
 
             File.WriteAllText(homePath, html);
+        }
+        public string SelectPath(FolderBrowserDialog folder)
+        {
+            string filePath = string.Empty;
+
+            if (folder.ShowDialog() == DialogResult.OK)
+                filePath = folder.SelectedPath;
+            else
+                filePath = $"{Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName}\\Data";
+
+            return filePath;
+        }
+
+        public string OutputFileName(string OutputFileDirectory, string fileExtension)
+        {
+            var datetime = DateTime.Now.ToString().Replace("/", "_").Replace(":", "_");
+
+            string fileFullname = Path.Combine(OutputFileDirectory, $"Output.{fileExtension}");
+
+            if (File.Exists(fileFullname))
+                fileFullname = Path.Combine(OutputFileDirectory, $"Output_{datetime}.{fileExtension}");
+
+            return fileFullname;
         }
     }
 }

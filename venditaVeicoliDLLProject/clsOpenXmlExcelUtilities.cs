@@ -15,28 +15,7 @@ using System.Windows.Forms;
 namespace OpenXmlUtilities
 {
     public class clsOpenXmlExcelUtilities
-    {
-        public string SelectPath(FolderBrowserDialog fbd)
-        {
-            string path = string.Empty;
-
-            if (fbd.ShowDialog() == DialogResult.OK) path = fbd.SelectedPath;
-            else path = $"{Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName}\\Data";
-
-            return path;
-        }
-        public string OutputFileName(string OutputFileDirectory, string fileExtension)
-        {
-            var datetime = DateTime.Now.ToString().Replace("/", "_").Replace(":", "_");
-
-            string fileFullname = Path.Combine(OutputFileDirectory, $"Output.{fileExtension}");
-
-            if (File.Exists(fileFullname))
-                fileFullname = Path.Combine(OutputFileDirectory, $"Output_{datetime}.{fileExtension}");
-
-            return fileFullname;
-        }
-        
+    {   
         public static void CreatePartsForExcel(SpreadsheetDocument document, List<Dictionary<string, string>> data)
         {
             SheetData partSheetData = GenerateSheetdataForDetails(data);
