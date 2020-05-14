@@ -4,3 +4,4 @@ C  [create] : crea tabella specificata
 A  [add] : aggiunge un veicolo (auto o moto)
 LS [list] : mostra lista veicoli
 D  [delete] : elimina tabella specificata
+X  [exit] : esci
