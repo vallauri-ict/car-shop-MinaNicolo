@@ -97,8 +97,11 @@ namespace winFormProject
                     excelContent.Add("Km Zero", kmZero);
                     excelContent.Add("Km Percorsi", listVeicolo[i].KmPercorsi.ToString());
                     excelContent.Add("Prezzo", listVeicolo[i].Prezzo.ToString() + " €");
-                    if ((listVeicolo[i] is auto)) excelContent.Add("Numero Airbag/Marca sella", (listVeicolo[i] as auto).NumairBag.ToString());
-                    else excelContent.Add("Numero Airbag/Marca sella", (listVeicolo[i] as moto).MarcaSella);
+                    if ((listVeicolo[i] is auto)) 
+                        excelContent.Add("Numero Airbag/Marca sella", (listVeicolo[i] as auto).NumairBag.ToString());
+                    else 
+                        excelContent.Add("Numero Airbag/Marca sella", (listVeicolo[i] as moto).MarcaSella);
+                    
                     list.Add(excelContent);
                 }
                 using (SpreadsheetDocument package = SpreadsheetDocument.Create(filePath, SpreadsheetDocumentType.Workbook))
