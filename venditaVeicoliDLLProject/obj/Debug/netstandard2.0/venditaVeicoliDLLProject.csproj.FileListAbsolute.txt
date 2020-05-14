@@ -46,3 +46,8 @@ C:\Users\Utente\Desktop\vendiataVeicoliSolution\venditaVeicoliDLLProject\obj\Deb
 C:\Users\Utente\Desktop\vendiataVeicoliSolution\venditaVeicoliDLLProject\obj\Debug\netstandard2.0\venditaVeicoliDLLProject.AssemblyInfo.cs
 C:\Users\Utente\Desktop\vendiataVeicoliSolution\venditaVeicoliDLLProject\obj\Debug\netstandard2.0\venditaVeicoliDLLProject.dll
 C:\Users\Utente\Desktop\vendiataVeicoliSolution\venditaVeicoliDLLProject\obj\Debug\netstandard2.0\venditaVeicoliDLLProject.pdb
+C:\Users\Utente\Desktop\GitHubINFO\car-shop-minanicolo\venditaVeicoliDLLProject\obj\Debug\netstandard2.0\venditaVeicoliDLLProject.csprojAssemblyReference.cache
+C:\Users\Utente\Desktop\GitHubINFO\car-shop-minanicolo\venditaVeicoliDLLProject\obj\Debug\netstandard2.0\venditaVeicoliDLLProject.AssemblyInfoInputs.cache
+C:\Users\Utente\Desktop\GitHubINFO\car-shop-minanicolo\venditaVeicoliDLLProject\obj\Debug\netstandard2.0\venditaVeicoliDLLProject.AssemblyInfo.cs
+C:\Users\Utente\Desktop\GitHubINFO\car-shop-minanicolo\venditaVeicoliDLLProject\obj\Debug\netstandard2.0\venditaVeicoliDLLProject.dll
+C:\Users\Utente\Desktop\GitHubINFO\car-shop-minanicolo\venditaVeicoliDLLProject\obj\Debug\netstandard2.0\venditaVeicoliDLLProject.pdb

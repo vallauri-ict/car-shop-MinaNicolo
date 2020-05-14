@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Utente\\Desktop\\vendiataVeicoliSolution\\venditaVeicoliDLLProject\\venditaVeicoliDLLProject.csproj": {}
+    "C:\\Users\\Utente\\Desktop\\GitHubINFO\\car-shop-minanicolo\\venditaVeicoliDLLProject\\venditaVeicoliDLLProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Utente\\Desktop\\vendiataVeicoliSolution\\venditaVeicoliDLLProject\\venditaVeicoliDLLProject.csproj": {
+    "C:\\Users\\Utente\\Desktop\\GitHubINFO\\car-shop-minanicolo\\venditaVeicoliDLLProject\\venditaVeicoliDLLProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Utente\\Desktop\\vendiataVeicoliSolution\\venditaVeicoliDLLProject\\venditaVeicoliDLLProject.csproj",
+        "projectUniqueName": "C:\\Users\\Utente\\Desktop\\GitHubINFO\\car-shop-minanicolo\\venditaVeicoliDLLProject\\venditaVeicoliDLLProject.csproj",
         "projectName": "venditaVeicoliDLLProject",
-        "projectPath": "C:\\Users\\Utente\\Desktop\\vendiataVeicoliSolution\\venditaVeicoliDLLProject\\venditaVeicoliDLLProject.csproj",
+        "projectPath": "C:\\Users\\Utente\\Desktop\\GitHubINFO\\car-shop-minanicolo\\venditaVeicoliDLLProject\\venditaVeicoliDLLProject.csproj",
         "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Utente\\Desktop\\vendiataVeicoliSolution\\venditaVeicoliDLLProject\\obj\\",
+        "outputPath": "C:\\Users\\Utente\\Desktop\\GitHubINFO\\car-shop-minanicolo\\venditaVeicoliDLLProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config",
