@@ -33,8 +33,10 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripBtnAddVeicolo = new System.Windows.Forms.ToolStripButton();
             this.salvaToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.apriToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripButtonExcel = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonWord = new System.Windows.Forms.ToolStripButton();
             this.tlsBtnCaricaOnline = new System.Windows.Forms.ToolStripButton();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +45,7 @@
             this.lbVeicoli.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbVeicoli.FormattingEnabled = true;
             this.lbVeicoli.Location = new System.Drawing.Point(0, 25);
-            this.lbVeicoli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbVeicoli.Margin = new System.Windows.Forms.Padding(2);
             this.lbVeicoli.Name = "lbVeicoli";
             this.lbVeicoli.Size = new System.Drawing.Size(545, 318);
             this.lbVeicoli.TabIndex = 0;
@@ -54,11 +56,12 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripBtnAddVeicolo,
             this.salvaToolStripButton,
-            this.apriToolStripButton,
+            this.ToolStripButtonExcel,
+            this.toolStripButtonWord,
             this.tlsBtnCaricaOnline});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
             this.toolStrip1.Size = new System.Drawing.Size(545, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
@@ -83,15 +86,26 @@
             this.salvaToolStripButton.Text = "&Salva";
             this.salvaToolStripButton.Click += new System.EventHandler(this.salvaToolStripButton_Click);
             // 
-            // apriToolStripButton
+            // ToolStripButtonExcel
             // 
-            this.apriToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.apriToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("apriToolStripButton.Image")));
-            this.apriToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.apriToolStripButton.Name = "apriToolStripButton";
-            this.apriToolStripButton.Size = new System.Drawing.Size(33, 22);
-            this.apriToolStripButton.Text = "&Apri";
-            this.apriToolStripButton.Click += new System.EventHandler(this.apriToolStripButton_Click);
+            this.ToolStripButtonExcel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ToolStripButtonExcel.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonExcel.Image")));
+            this.ToolStripButtonExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripButtonExcel.Name = "ToolStripButtonExcel";
+            this.ToolStripButtonExcel.Size = new System.Drawing.Size(38, 22);
+            this.ToolStripButtonExcel.Text = "&Excel";
+            this.ToolStripButtonExcel.Click += new System.EventHandler(this.ToolStripButtonExcel_Click);
+            // 
+            // toolStripButtonWord
+            // 
+            this.toolStripButtonWord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStripButtonWord.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonWord.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonWord.Image")));
+            this.toolStripButtonWord.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonWord.Name = "toolStripButtonWord";
+            this.toolStripButtonWord.Size = new System.Drawing.Size(40, 22);
+            this.toolStripButtonWord.Text = "&Word";
+            this.toolStripButtonWord.Click += new System.EventHandler(this.toolStripButtonWord_Click);
             // 
             // tlsBtnCaricaOnline
             // 
@@ -110,7 +124,7 @@
             this.ClientSize = new System.Drawing.Size(545, 343);
             this.Controls.Add(this.lbVeicoli);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Text = "Salone Vendita";
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -126,9 +140,11 @@
         private System.Windows.Forms.ListBox lbVeicoli;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripBtnAddVeicolo;
-        private System.Windows.Forms.ToolStripButton apriToolStripButton;
+        private System.Windows.Forms.ToolStripButton ToolStripButtonExcel;
         private System.Windows.Forms.ToolStripButton salvaToolStripButton;
         private System.Windows.Forms.ToolStripButton tlsBtnCaricaOnline;
+        private System.Windows.Forms.ToolStripButton toolStripButtonWord;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
     }
 }
 
