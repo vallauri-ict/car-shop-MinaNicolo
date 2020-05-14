@@ -5,11 +5,12 @@
     <Modello>Panigale V4R</Modello>
     <Cilindrata>1000</Cilindrata>
     <PotenzaKw>75</PotenzaKw>
-    <Immatricolazione>2020-01-10T09:01:02.33977+01:00</Immatricolazione>
+    <Immatricolazione>2020-05-10T15:49:21.6072952+02:00</Immatricolazione>
     <KmPercorsi>0</KmPercorsi>
     <Colore>blu</Colore>
     <IsUsato>false</IsUsato>
     <IsKmZero>false</IsKmZero>
+    <Prezzo>11300</Prezzo>
     <MarcaSella>StandarCO</MarcaSella>
   </veicolo>
   <veicolo xsi:type="auto">
@@ -17,11 +18,12 @@
     <Modello>Stelvio</Modello>
     <Cilindrata>2000</Cilindrata>
     <PotenzaKw>150</PotenzaKw>
-    <Immatricolazione>2020-01-10T09:01:02.3553991+01:00</Immatricolazione>
+    <Immatricolazione>2020-05-10T15:49:21.613282+02:00</Immatricolazione>
     <KmPercorsi>0</KmPercorsi>
     <Colore>rosso</Colore>
     <IsUsato>false</IsUsato>
     <IsKmZero>false</IsKmZero>
+    <Prezzo>10000</Prezzo>
     <NumairBag>8</NumairBag>
   </veicolo>
 </ArrayOfVeicolo>

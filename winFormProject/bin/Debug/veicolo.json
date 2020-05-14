@@ -1,26 +1,30 @@
 [
   {
     "MarcaSella": "StandarCO",
+    "ImagePath": null,
     "Marca": "Ducati",
     "Modello": "Panigale V4R",
     "Cilindrata": 1000,
     "PotenzaKw": 75.0,
-    "Immatricolazione": "2020-01-10T09:01:02.33977+01:00",
+    "Immatricolazione": "2020-05-10T15:49:21.6072952+02:00",
     "KmPercorsi": 0,
     "Colore": "blu",
     "IsUsato": false,
-    "IsKmZero": false
+    "IsKmZero": false,
+    "Prezzo": 11300
   },
   {
     "NumairBag": 8,
+    "ImagePath": null,
     "Marca": "Alfa Romeo",
     "Modello": "Stelvio",
     "Cilindrata": 2000,
     "PotenzaKw": 150.0,
-    "Immatricolazione": "2020-01-10T09:01:02.3553991+01:00",
+    "Immatricolazione": "2020-05-10T15:49:21.613282+02:00",
     "KmPercorsi": 0,
     "Colore": "rosso",
     "IsUsato": false,
-    "IsKmZero": false
+    "IsKmZero": false,
+    "Prezzo": 10000
   }
 ]
