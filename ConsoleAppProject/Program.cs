@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using venditaVeicoliDLLProject;
 using System.Data.OleDb;
 using System.IO;
-using static ReflectionCssPocProject.Utils;
 
 namespace ConsoleAppProject
 {
@@ -69,7 +68,7 @@ namespace ConsoleAppProject
 
         private static void DropTable(string tabella)
         {
-            if(connStr!=null)
+            if (connStr != null)
             {
                 OleDbConnection con = new OleDbConnection(connStr);
                 using (con)
